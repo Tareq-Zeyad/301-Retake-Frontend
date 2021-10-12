@@ -27,10 +27,14 @@ class App extends React.Component {
 
               <Route path="/profile">
                 <Profile/>
+                {this.props.auth0.isAuthenticated ? <Profile /> : <Login />}
+
               </Route>
 
               <Route path="/getAPIData">
                 <AllDataAPI/>
+                {this.props.auth0.isAuthenticated ? <AllDataAPI /> : <Login />}
+
               </Route>
               
             </Switch>
