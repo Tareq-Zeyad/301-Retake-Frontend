@@ -26,7 +26,7 @@ class MyFavorites extends React.Component {
     const { user } = this.props.auth0;
     const email = user.email;
     console.log(email);
-    const url = `http://localhost:3010/getFavData?email=${this.props.auth0.user.email}`;
+    const url = `https://retake-301-exam.herokuapp.com/getFavData?email=${this.props.auth0.user.email}`;
     axios
       .get(url)
       .then(result => {
@@ -47,7 +47,7 @@ class MyFavorites extends React.Component {
       email: email
     }
     const id = object.id;
-    const url = `http://localhost:3010/deleteItem/${id}/${email}`;
+    const url = `https://retake-301-exam.herokuapp.com/deleteItem/${id}/${email}`;
     axios
       .delete(url, obj)
       .then(result => {
@@ -73,7 +73,7 @@ class MyFavorites extends React.Component {
       langId: this.state.langId,
       email: email
     }
-    const url = `http://localhost:3010/updateData/${this.state.langId}`;
+    const url = `https://retake-301-exam.herokuapp.com/updateData/${this.state.langId}`;
     axios
       .put(url, obj)
       .then(result => {

@@ -14,7 +14,7 @@ class AllDataAPI extends Component {
     }
 
     componentDidMount = () => {
-        const url = 'http://localhost:3010/getData';
+        const url = 'https://retake-301-exam.herokuapp.com/getData';
         axios
             .get(url)
             .then(result => {
@@ -28,7 +28,7 @@ class AllDataAPI extends Component {
     };
 
     addToMyFav=(object)=>{
-        const url="http://localhost:3010/addToFav";
+        const url="https://retake-301-exam.herokuapp.com/addToFav";
         axios
         .post(url,object)
         .then(result=>{
